@@ -1,0 +1,26 @@
+<nav>
+    <ul id="navigation-list" class="list-unstyled">
+        <li><a href="index.html">Who We Are</a></li>
+        <span class="divider">|</span>
+        <li><a href="whatwedo.html">What We Do</a></li>
+        <span class="divider">|</span>
+        <li><a href="#">News &amp; Events</a></li>
+        <span class="divider">|</span>
+        <li><a href="wherewework.html">Where We Work</a></li>
+        <span class="divider">|</span>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <ul class="navbar-nav m1-auto">
+        {% if not current_user.is_authenticated %}
+        <li class="nav-item">
+            <a href="{{ url_for('authentication.login') }}" class="nav-link">Login</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url_for('authentication.register') }}" class="nav-link">Register</a>
+        </li>
+        {% else %}
+        </li>
+        <li class="nav-item">
+            <a href="{{ url_for('authentication.logout') }}" class="nav-link">Logout</a>
+        </li>
+</nav>
