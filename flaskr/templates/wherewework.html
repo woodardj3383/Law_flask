@@ -1,52 +1,18 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends 'layout.html' %}
+{% set active_page='wherewework' -%}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="./static/css/main.css">
-    </head>
+{% block title %}
+{{ super() }} | Where We Work
+{% endblock %}
+{% block body %}
+
   <body>
 
       <div class="container">
         <div class="row">
             <div id="page-content">
                 <div id="content">
-                    <header>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div id="authentication-container">
-                                    <a href="#" class="float-right btn btn-secondary">Login</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-md-6">
-                                <div id="logo-container">
-                                    <img class="img-fluid" src="https://placehold.it/318x76&text=Logo Image" alt="Logo Image">
-                                </div>
-                            </div>
-                        </div>
-
-                        <nav>
-                            <ul id="navigation-list" class="list-unstyled">
-                                <li><a href="index.html">Who We Are</a></li>
-                                <span class="divider">|</span>
-                                <li><a href="whatwedo.html">What We Do</a></li>
-                                <span class="divider">|</span>
-                                <li><a href="#">News &amp; Events</a></li>
-                                <span class="divider">|</span>
-                                <li><a href="wherewework.html">Where We Work</a></li>
-                                <span class="divider">|</span>    
-                                <li><a href="contact.html">Contact Us</a></li>
-                            </ul>
-                        </nav>
-    
-                    </header>
+                    
                     <main>
                         <div class="row">
                             <div class="col-md-3" style="padding-left: 0px;">
@@ -145,38 +111,13 @@
                             
                         </div>
                     </main>
-                    <footer>
-                        <ul class="footer-ul list-unstyled">
-                            <li>
-                                <a href="index.html">Who We Are</a>
-                            </li>
-                            <span class="divider">&mdash;</span>
-                            <li>
-                                <a href="whatwedo.html">What We Do</a>
-                            </li>
-                            <span class="divider">&mdash;</span>
-                            <li>
-                                <a href="#">News &amp; Events</a>
-                            </li>
-                            <span class="divider">&mdash;</span>
-                            <li>
-                                <a href="wherewework.html">Where We Work</a>
-                            </li>
-                            <span class="divider">&mdash;</span>    
-                            <li>
-                                <a href="contact.html">Contact Us</a>
-                            </li>
-                        </ul>
-                    </footer>
+                    
                 </div>
             </div>
         </div>
     </div>
       
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   
   </body>
-</html>
+
+{% endblock %}

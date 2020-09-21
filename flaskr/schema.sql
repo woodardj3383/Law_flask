@@ -14,6 +14,5 @@ CREATE TABLE post (
   title TEXT NOT NULL,
   body TEXT NOT NULL,
   FOREIGN KEY
-(author_id) REFERENCES user
-(id)
+(author_id) REFERENCES user (id)
 );

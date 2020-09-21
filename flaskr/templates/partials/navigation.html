@@ -1,26 +1,24 @@
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <div id="logo-container">
+            <img class="img-fluid" src="https://placehold.it/318x76&text=Logo Image" alt="Logo Image">
+        </div>
+    </div>
+</div>
 <nav>
     <ul id="navigation-list" class="list-unstyled">
-        <li><a href="index.html">Who We Are</a></li>
+        <li><a href="{{ url_for('index') }}">Who We Are</a></li>
         <span class="divider">|</span>
-        <li><a href="whatwedo.html">What We Do</a></li>
+        <li><a href="{{ url_for('whatwedo') }}">What We Do</a></li>
         <span class="divider">|</span>
         <li><a href="#">News &amp; Events</a></li>
         <span class="divider">|</span>
-        <li><a href="wherewework.html">Where We Work</a></li>
+        <li><a href="{{ url_for('wherewework') }}">Where We Work</a></li>
         <span class="divider">|</span>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        <span class="divider">|</span>
+        <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+        <span class="divider">|</span>
+        <li><a href="{{ url_for('auth.register') }}">Register</a></li>
     </ul>
-    <ul class="navbar-nav m1-auto">
-        {% if not current_user.is_authenticated %}
-        <li class="nav-item">
-            <a href="{{ url_for('authentication.login') }}" class="nav-link">Login</a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ url_for('authentication.register') }}" class="nav-link">Register</a>
-        </li>
-        {% else %}
-        </li>
-        <li class="nav-item">
-            <a href="{{ url_for('authentication.logout') }}" class="nav-link">Logout</a>
-        </li>
 </nav>

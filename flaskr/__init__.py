@@ -1,21 +1,29 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
+from config import Config
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+# from flask_login import LoginManager
+# from flask_moment import Moment
 
 
-def create_app(test_config=None):
+# login = LoginManager()
+# moment = Moment()
+
+def create_app(config_class=Config):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
-    )
+    app.config.from_object(config_class)
 
-    if test_config is None:
+    db = SQLAlchemy(app)
+    migrate = Migrate(app, db)
+
+    if config_class is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile('config.py', silent=True)
     else:
         # load the test config if passed in
-        app.config.from_mapping(test_config)
+        app.config.from_object(config_class)
 
     # ensure the instance folder exists
     try:
@@ -24,10 +32,34 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    @app.route('/')
+    def index():
+        return render_template('index.html')
     
+    @app.route('/login')
+    def login():
+        return render_template('login.html')
+    
+    @app.route('/whatwedo')
+    def whatwedo():
+        return render_template('whatwedo.html')
+    
+    @app.route('/whoweare')
+    def whoweare():
+        return render_template('whoweare.html')
+   
+    @app.route('/wherewework')
+    def wherewework():
+        return render_template('wherewework.html')
+    
+    @app.route('/contact')
+    def contact():
+        return render_template('contact.html')
+   
+    @app.route('/register')
+    def register():
+        return render_template('register.html')
+
     from . import db
     db.init_app(app)
 

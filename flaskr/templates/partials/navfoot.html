@@ -1,10 +1,10 @@
 <ul class="footer-ul list-unstyled">
     <li>
-        <a href="index.html">Who We Are</a>
+        <a href="{{ url_for('index') }}">Who We Are</a>
     </li>
     <span class="divider">&mdash;</span>
     <li>
-        <a href="whatwedo.html">What We Do</a>
+        <a href="{{ url_for('whatwedo') }}">What We Do</a>
     </li>
     <span class="divider">&mdash;</span>
     <li>
@@ -12,10 +12,18 @@
     </li>
     <span class="divider">&mdash;</span>
     <li>
-        <a href="wherewework.html">Where We Work</a>
+        <a href="{{ url_for('wherewework') }}">Where We Work</a>
     </li>
     <span class="divider">&mdash;</span>
     <li>
-        <a href="contact.html">Contact Us</a>
+        <a href="{{ url_for('contact') }}">Contact Us</a>
+    </li>
+    <span class="divider">&mdash;</span>
+    <li>
+        <a href="{{ url_for('login') }}"> Login</a>
+    </li>
+    <span class="divider">&mdash;</span>
+    <li>
+        <a href="{{ url_for('register') }}">Register</a>
     </li>
 </ul>
